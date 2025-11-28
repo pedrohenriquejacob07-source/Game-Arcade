@@ -1,76 +1,81 @@
-/* ======= ESTILO GERAL ======= */
-body {
-    background: #0d0d0d;
-    font-family: "Poppins", sans-serif;
+/* ===== RESET ===== */
+* {
     margin: 0;
     padding: 0;
-    color: white;
+    box-sizing: border-box;
+    font-family: "Orbitron", Arial, sans-serif;
+}
+
+/* ===== FUNDO ===== */
+body {
+    background: radial-gradient(circle at top, #03001e, #0f0015, #000);
+    color: #fff;
     text-align: center;
+    padding: 20px;
+    overflow-x: hidden;
 }
 
-/* ======= CABEÇALHO ======= */
-header {
-    padding: 50px 20px;
-}
-
-h1 {
-    font-size: 45px;
-    color: #0affd2;
-    text-shadow: 0 0 15px #0affd2;
+/* ===== CABEÇALHO ===== */
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #00eaff;
+    text-shadow: 0 0 20px #00eaff, 0 0 40px #0088ff;
 }
 
 header p {
-    font-size: 18px;
-    opacity: 0.8;
+    font-size: 1.3rem;
+    opacity: 0.85;
 }
 
-/* ======= CONTAINER DOS BOTÕES ======= */
+/* ===== GRID DOS BOTÕES ===== */
 .links-container {
-    max-width: 700px;
-    margin: 0 auto;
+    margin-top: 40px;
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     padding: 20px;
 }
 
-/* ======= BOTÕES ======= */
+/* ===== BOTÕES ESTILIZADOS ===== */
 .btn-card {
-    display: block;
-    width: 300px;
-    margin: 18px auto;
-    padding: 18px;
-
-    background: #111;
-    border: 2px solid #0affd2;
-    border-radius: 12px;
-
+    background: rgba(20, 20, 20, 0.6);
+    padding: 25px;
+    border-radius: 18px;
     text-decoration: none;
-    color: white;
-    font-size: 22px;
+    font-size: 1.4rem;
     font-weight: bold;
+    color: #00eaff;
 
-    letter-spacing: 1px;
+    border: 2px solid #00eaff;
+    box-shadow: 0 0 10px #00eaff80;
 
-    transition: 
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background 0.3s ease,
-        color 0.3s ease;
-}
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-/* Hover neon brilhante */
-.btn-card:hover {
-    background: #0affd2;
-    color: #000;
-    transform: translateY(-6px) scale(1.05);
-    box-shadow: 0 0 20px #0affd2, 0 0 40px #0affd2;
-}
+    transition: 0.35s ease-in-out;
 
-/* Clique */
-.btn-card:active {
-    transform: scale(0.95);
-}
-
-/* ======= ANIMAÇÃO DE APARECIMENTO ======= */
-.fade-in {
+    /* Estado inicial (animação de entrada) */
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(35px);
+}
+
+/* ===== QUANDO O JS ATIVAR A ENTRADA ===== */
+.btn-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===== EFEITO HOVER NEON ===== */
+.btn-card:hover {
+    transform: translateY(-7px) scale(1.1);
+    background: #00eaff;
+    color: #000;
+
+    box-shadow:
+        0 0 20px #00eaff,
+        0 0 35px #00eaff,
+        0 0 60px #00eaff;
 }
