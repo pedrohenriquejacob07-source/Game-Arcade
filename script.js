@@ -1,21 +1,16 @@
-// Seleciona todos os links do seu body
-const links = document.querySelectorAll("body a");
+// Anima os botões quando a página carrega
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".btn-card");
 
-// Cria um container para os cards
-const container = document.createElement("div");
-container.className = "container-links";
+    cards.forEach((card, index) => {
+        // adiciona classe inicial invisível
+        card.classList.add("fade-in");
 
-// Move os links para dentro de cards organizados
-links.forEach(link => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    // Coloca o link dentro do card
-    card.appendChild(link.cloneNode(true));
-
-    container.appendChild(card);
+        // animação em cascata
+        setTimeout(() => {
+            card.style.transition = "0.7s ease";
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+        }, index * 150);
+    });
 });
-
-// Limpa o body e adiciona o container
-document.body.innerHTML = "<h1>Portal de Projetos</h1>";
-document.body.appendChild(container);

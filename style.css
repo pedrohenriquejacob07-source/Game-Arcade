@@ -1,47 +1,76 @@
+/* ======= ESTILO GERAL ======= */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
+    background: #0d0d0d;
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
     color: white;
     text-align: center;
+}
+
+/* ======= CABEÇALHO ======= */
+header {
+    padding: 50px 20px;
+}
+
+h1 {
+    font-size: 45px;
+    color: #0affd2;
+    text-shadow: 0 0 15px #0affd2;
+}
+
+header p {
+    font-size: 18px;
+    opacity: 0.8;
+}
+
+/* ======= CONTAINER DOS BOTÕES ======= */
+.links-container {
+    max-width: 700px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-.container-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
+/* ======= BOTÕES ======= */
+.btn-card {
+    display: block;
+    width: 300px;
+    margin: 18px auto;
+    padding: 18px;
 
-.card {
-    background: #1c1c1c;
-    padding: 20px;
-    border-radius: 10px;
-    border: 1px solid #333;
-    transition: 0.3s;
-}
+    background: #111;
+    border: 2px solid #0affd2;
+    border-radius: 12px;
 
-.card:hover {
-    transform: scale(1.05);
-    border-color: #ff6600;
-}
-
-.card a {
-    display: inline-block;
-    padding: 10px 15px;
-    background: #ff6600;
-    color: white;
     text-decoration: none;
-    border-radius: 5px;
+    color: white;
+    font-size: 22px;
     font-weight: bold;
-    transition: 0.3s;
+
+    letter-spacing: 1px;
+
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
-.card a:hover {
-    background: #cc5200;
+/* Hover neon brilhante */
+.btn-card:hover {
+    background: #0affd2;
+    color: #000;
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 0 20px #0affd2, 0 0 40px #0affd2;
 }
-h1{
-    margin: 0;
-    font-size: 3rem;
-    color: #cc5200;
+
+/* Clique */
+.btn-card:active {
+    transform: scale(0.95);
+}
+
+/* ======= ANIMAÇÃO DE APARECIMENTO ======= */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
 }
