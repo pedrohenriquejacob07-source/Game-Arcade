@@ -71,7 +71,7 @@ header p {
 /* ===== EFEITO HOVER NEON ===== */
 .btn-card:hover {
     transform: translateY(-7px) scale(1.1);
-    background: #00eaff;
+    background: #12bce2;
     color: #000;
 
     box-shadow:
